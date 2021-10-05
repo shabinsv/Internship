@@ -185,7 +185,7 @@ res.send({ boolean: true, alert:'Account Created..',nav:'login' })
   }
 });
 
-app.post("/addcourse",function(req,res){
+app.post("/addcourse",verifyToken,function(req,res){
   console.log(req.body);
 
   var course={
@@ -209,7 +209,7 @@ app.get("/course",function(req,res){
  })
 });
 
-app.post("/apply",function(req,res){
+app.post("/apply",verifyToken,function(req,res){
   console.log(req.body);
 
   var student={
@@ -254,7 +254,7 @@ function checklimit(req,res,next){
   
 }
 
-app.put('/accept',checklimit,(req,res)=>{
+app.put('/accept',checklimit,verifyToken,(req,res)=>{
   
   id=req.body._id,
 
@@ -282,7 +282,7 @@ app.put('/reject',(req,res)=>{
  
 });
 
-app.get('/coursestudent',(req,res)=>{
+app.get('/coursestudent',verifyToken,(req,res)=>{
   
   Studentdata.find({status:"accepted"})
   .then(data=>{
@@ -292,7 +292,7 @@ app.get('/coursestudent',(req,res)=>{
   })
 });
 
-app.post("/mail",function(req,res){
+app.post("/mail",verifyToken,function(req,res){
   var course=req.body.mail;
   var subject=req.body.subject;
   var msg=req.body.mess;
@@ -329,7 +329,7 @@ app.post("/mail",function(req,res){
 
 
  });
- app.get("/status/:id",function(req,res){
+ app.get("/status/:id",verifyToken,function(req,res){
   const id = req.params.id; 
   Studentdata.find({ID:id})
   .then(function(data){
