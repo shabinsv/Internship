@@ -1,0 +1,82 @@
+
+
+<div class="main">
+    <button type="button" class="btn btn-outline-secondary sendbutton" (click)="open(content)">Send Mail</button>
+    <div class='card'>
+       
+      <div class='card-header'>
+     <h4>Student List</h4>
+      </div>
+
+      <table class="table">
+        
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Qulification</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Address</th>
+            <th scope="col">Course</th>
+           
+          </tr>
+        
+        <tbody >
+          <tr *ngFor="let students of student">
+            <th scope="row">{{students.name}}</th>
+            <td>{{students.email}}</td>
+            <td>{{students.qulification}}</td>
+            <td>{{students.dob}}</td>
+            <td>{{students.address}}</td>
+            <td>{{students.course}}</td>
+           
+
+          </tr>
+          
+        </tbody>
+      </table>
+
+    </div>
+
+    
+</div>
+
+<div class="modal">
+    <ng-template #content let-c="close" let-d="dismiss" >
+      
+      
+      <div class="modal-header card-header" style="border-radius: 10px;">
+        <h4 class="modal-title">Send Mail..</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      
+     </div>
+     
+        <div class="modal-body">
+          <form (ngSubmit)="message()">
+
+            
+               
+            <select style="height: 35px;" name="course" [(ngModel)]="mail.mail"  required>
+                <option value="" disabled selected >Choose course</option>
+                <option *ngFor="let courses of course">{{courses.title}}</option>
+              </select>
+              <br>
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Subject</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" [(ngModel)]="mail.subject" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mess" [(ngModel)]="mail.mess" required></textarea>
+              </div>
+            
+     
+            <button style="float: right;width: 30%;margin-right: 0;" type="submit"  class="btn btn-outline-secondary sendbutton">Send
+            </button>
+          </form>
+        </div>
+    
+    </ng-template>
+  </div>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="title">Add Course</div>
+    <div class="content">
+      <form action="#" (ngSubmit)="addcourse()"  #createform="ngForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Course Title</span>
+            <input type="text"name="CourseTitle" required="required" placeholder="" [(ngModel)]="course.title"required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Course Duration</span>
+            <input type="text" placeholder="" required="required" name="CourseDuration" [(ngModel)]="course.duration" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Course Description</span>
+            <input type="text"name="CourseDescription" required="required" placeholder="" [(ngModel)]="course.des" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Course Venue</span>
+            <input type="text" id="birthday" required="required" placeholder=""name="CourseVenue" [(ngModel)]="course.venue">
+          </div>
+          <div class="input-box">
+            <span class="details">Start Date</span>
+            <input type="date" placeholder="" required="required" name="startdate"  [(ngModel)]="course.start"required>
+          </div>
+          <div class="input-box">
+            <span class="details">End Date</span>
+            <input type="date" placeholder="" required="required" name="EndDate"  [(ngModel)]="course.end"required>
+          </div>
+        </div>
+        
+        <div class="button">
+          
+          <input [disabled]="createform.form.invalid" type="submit" value="Add"> 
+        </div>
+      </form>
+    </div>
+  </div>

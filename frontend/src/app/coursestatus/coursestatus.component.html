@@ -1,0 +1,42 @@
+
+
+<div class="main">
+    <div class='card'>
+       
+      <div class='card-header'>
+     <h4>Applied Course</h4>
+      </div>
+
+      <table class="table">
+        
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Qulification</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Address</th>
+            <th scope="col">Course</th>
+            <th scope="col">Status</th>
+           
+          </tr>
+        
+        <tbody >
+          <tr *ngFor="let students of student">
+            <th scope="row">{{students.name}}</th>
+            <td>{{students.email}}</td>
+            <td>{{students.qulification}}</td>
+            <td>{{students.dob}}</td>
+            <td>{{students.address}}</td>
+            <td>{{students.course}}</td>
+            <td>{{students.status}}</td>
+           
+
+          </tr>
+          
+        </tbody>
+      </table>
+
+    </div>
+
+    
+</div>

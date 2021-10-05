@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="title">Details To Apply</div>
+    <div class="content">
+      <form action="#" (ngSubmit)="applycourse()"  #createform="ngForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text"name="full_name" required="required" placeholder="Enter your name" [(ngModel)]="student.name"required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required="required" name="email" [(ngModel)]="student.email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Mobile Number</span>
+            <input type="number"name="mobile" required="required" placeholder="Enter your  Mobile number" [(ngModel)]="student.phonenumber" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Date Of Birth</span>
+            <input type="date" id="birthday" required="required" placeholder="YYYY-MM-DD"name="dob" [(ngModel)]="student.dob">
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" placeholder="Enter your Address" required="required" name="address"  [(ngModel)]="student.address"required>
+          </div>
+          <div class="input-box">
+            <span class="details">Qulification</span>
+            <input type="text" placeholder="Enter your Qulification" required="required" name="about"  [(ngModel)]="student.qulification"required>
+          </div>
+        </div>
+        <div class="input-box">
+          <span class="details">Course</span>
+         
+  <select placeholder="Degree" required="required" name="degree" [(ngModel)]="student.course">
+    
+    <option value="" disabled selected >Choose your course</option>
+            <option *ngFor="let courses of course">{{courses.title}}</option>
+      </select>
+         
+            
+        </div>
+        <div class="button">
+          
+          <input [disabled]="createform.form.invalid" type="submit" value="Apply Course"> 
+        </div>
+      </form>
+    </div>
+  </div>

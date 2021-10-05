@@ -1,0 +1,43 @@
+.main{
+   
+    margin:20px;
+    font-weight: normal;
+}
+.card{
+    
+    background-color: white;
+    color: black;
+}
+.card-title{
+    font-weight: bold;
+    font-family: sans-serif;
+    
+}
+
+#date{
+    margin-top: 6px;
+    margin-bottom: 2px;
+}
+
+#duration{
+    /* margin-left: 4px; */
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+.card-action{
+    text-align: center;
+}
+.card-action a{
+  align-items: center;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  text-decoration: none;
+  text-align: center;
+  color: blue;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  padding: 20px;
+  margin-left: 120px;
+    
+}
